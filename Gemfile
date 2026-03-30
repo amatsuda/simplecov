@@ -12,7 +12,11 @@ group :development do
   gem "cuprite"
   gem "aruba"
   gem "capybara"
-  gem "rackup"
+  if RUBY_VERSION < "2.7"
+    gem "rack", "< 3"
+  else
+    gem "rackup"
+  end
   gem "cucumber"
   gem "minitest"
   gem "rake"
